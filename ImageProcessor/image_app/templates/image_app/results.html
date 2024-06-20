@@ -1,0 +1,89 @@
+<!-- templates/image_app/results.html -->
+<!--
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados del Procesamiento de Imágenes</title>
+</head>
+<body>
+    <h2>Resultados del Procesamiento de Imágenes</h2>
+
+    <h3>Diagnóstico</h3>
+    <p>{{ diagnosis }}</p>
+
+    <h3>Imagen Original</h3>
+    <img src="{{ original_image_url }}" alt="Original Image">
+
+    <h3>Filtros Aplicados</h3>
+    <h4>Filtro Verde</h4>
+    <p>Porcentaje de píxeles verdes: {{ percentages.green }}%</p>
+    <img src="{{ filtered_image_urls.green }}" alt="Green Filtered Image">
+
+    <h4>Filtro Blanco</h4>
+    <p>Porcentaje de píxeles blancos: {{ percentages.white }}%</p>
+    <img src="{{ filtered_image_urls.white }}" alt="White Filtered Image">
+
+    <h4>Filtro Amarillo</h4>
+    <p>Porcentaje de píxeles amarillos: {{ percentages.yellow }}%</p>
+    <img src="{{ filtered_image_urls.yellow }}" alt="Yellow Filtered Image">  -->
+
+    <!-- Botón para regresar a la página de carga -->
+    <!--<form action="{% url 'upload_image' %}" method="get">
+        <button type="submit">Realizar Otro Diagnóstico</button>
+    </form>
+
+</body>
+</html>-->
+
+<!-- templates/image_app/results.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Procesamiento de Imágenes</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'upload_image' %}">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Resultados del Procesamiento de Imágenes</h2>
+        <div class="results">
+            <h3>Diagnóstico</h3>
+            <p>{{ diagnosis }}</p>
+            <h3>Imagen Original</h3>
+            <img src="{{ original_image_url }}" alt="Original Image">
+
+            <h3>Filtros Aplicados</h3>
+            <h4>Filtro Verde</h4>
+            <p>Porcentaje de píxeles verdes: {{ percentages.green }}%</p>
+            <img src="{{ filtered_image_urls.green }}" alt="Green Filtered Image">
+
+            <h4>Filtro Blanco</h4>
+            
+            <p>Porcentaje de píxeles blancos: {{ percentages.white }}%</p>
+            <img src="{{ filtered_image_urls.white }}" alt="White Filtered Image">
+
+            <h4>Filtro Amarillo</h4>
+            <p>Porcentaje de píxeles amarillos: {{ percentages.yellow }}%</p>
+            <img src="{{ filtered_image_urls.yellow }}" alt="Yellow Filtered Image">
+        </div>
+        <!-- Botón para regresar a la página de carga -->
+        <form action="{% url 'upload_image' %}" method="get">
+            <button type="submit">Realizar Otro Diagnóstico</button>
+        </form>
+    </div>
+</body>
+</html>
